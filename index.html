@@ -1,532 +1,1144 @@
 <!doctype html>
 <html lang="en" data-lang="en" class="no-js">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Talha Burak Aydın</title>
-<meta name="description" content="Talha Burak Aydın — computer engineer in Ankara. Education, internship, courses and data engineering practice projects.">
-<meta name="theme-color" content="#070b16">
-<meta property="og:title" content="Talha Burak Aydın">
-<meta property="og:description" content="Computer Engineer · Ankara, Türkiye">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://talltalha.github.io/">
-<link rel="canonical" href="https://talltalha.github.io/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2350e3c2'/%3E%3Cstop offset='1' stop-color='%238b7cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%23070b16'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' text-anchor='middle' fill='url(%23g)'%3ETB%3C/text%3E%3C/svg%3E">
-<script>
-  // Pick the language before first paint: ?lang= > saved choice > browser language.
-  (function () {
-    var l = new URLSearchParams(location.search).get('lang');
-    try { l = l || localStorage.getItem('lang'); } catch (e) {}
-    if (l !== 'tr' && l !== 'en') l = /^tr\b/i.test(navigator.language || '') ? 'tr' : 'en';
-    document.documentElement.lang = l;
-    document.documentElement.dataset.lang = l;
-    document.documentElement.classList.remove('no-js');
-  })();
-</script>
-<style>
-  :root {
-    --bg: #070b16;
-    --bg-2: #0c1224;
-    --fg: #e8ecf6;
-    --muted: #9aa5c0;
-    --line: rgba(160, 180, 230, 0.14);
-    --glass: rgba(14, 20, 40, 0.55);
-    --teal: #50e3c2;
-    --violet: #8b7cff;
-    --pink: #ff7ab8;
-    --radius: 18px;
-    --ease: cubic-bezier(.22, .8, .22, 1);
-    color-scheme: dark;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--fg);
-    font: 16px/1.65 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    overflow-x: hidden;
-  }
-  html[data-lang="en"] .tr, html[data-lang="tr"] .en { display: none !important; }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Talha Burak Aydın</title>
+  <meta name="description"
+    content="Talha Burak Aydın — computer engineer in Ankara. Education, internship, courses and data engineering practice projects.">
+  <meta name="theme-color" content="#070b16">
+  <meta property="og:title" content="Talha Burak Aydın">
+  <meta property="og:description" content="Computer Engineer · Ankara, Türkiye">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://talltalha.github.io/">
+  <link rel="canonical" href="https://talltalha.github.io/">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2350e3c2'/%3E%3Cstop offset='1' stop-color='%238b7cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%23070b16'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' text-anchor='middle' fill='url(%23g)'%3ETB%3C/text%3E%3C/svg%3E">
+  <script>
+    // Pick the language before first paint: ?lang= > saved choice > browser language.
+    (function () {
+      var l = new URLSearchParams(location.search).get('lang');
+      try { l = l || localStorage.getItem('lang'); } catch (e) { }
+      if (l !== 'tr' && l !== 'en') l = /^tr\b/i.test(navigator.language || '') ? 'tr' : 'en';
+      document.documentElement.lang = l;
+      document.documentElement.dataset.lang = l;
+      document.documentElement.classList.remove('no-js');
+    })();
+  </script>
+  <style>
+    :root {
+      --bg: #070b16;
+      --bg-2: #0c1224;
+      --fg: #e8ecf6;
+      --muted: #9aa5c0;
+      --line: rgba(160, 180, 230, 0.14);
+      --glass: rgba(12, 18, 36, 0.78);
+      --teal: #50e3c2;
+      --violet: #8b7cff;
+      --pink: #ff7ab8;
+      --radius: 18px;
+      --ease: cubic-bezier(.22, .8, .22, 1);
+      color-scheme: dark;
+    }
 
-  #field { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; display: block; }
-  .veil {
-    position: fixed; inset: 0; z-index: 1; pointer-events: none;
-    background:
-      radial-gradient(ellipse 80% 65% at 50% 45%, rgba(7, 11, 22, 0), rgba(7, 11, 22, 0.55) 100%);
-  }
-  .wrap { position: relative; z-index: 2; max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+    * {
+      box-sizing: border-box;
+    }
 
-  /* Top bar */
-  header {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 10;
-    transition: background .4s var(--ease), border-color .4s var(--ease), backdrop-filter .4s var(--ease);
-    border-bottom: 1px solid transparent;
-  }
-  header.scrolled { background: rgba(7, 11, 22, 0.6); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-color: var(--line); }
-  .bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 64px; max-width: 1040px; margin: 0 auto; padding: 0 16px; }
-  .brand { font-weight: 700; letter-spacing: .02em; color: var(--fg); text-decoration: none; }
-  .brand b { background: linear-gradient(90deg, var(--teal), var(--violet)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  nav { display: flex; align-items: center; gap: 4px; }
-  nav a { color: var(--muted); text-decoration: none; font-size: .92rem; padding: 6px 10px; border-radius: 999px; transition: color .25s, background .25s; }
-  nav a:hover { color: var(--fg); background: rgba(255, 255, 255, 0.06); }
-  .lang {
-    display: inline-flex; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--glass);
-    margin-left: 6px; position: relative;
-  }
-  .lang button {
-    position: relative; z-index: 1; border: 0; background: none; color: var(--muted); font: inherit; font-size: .8rem;
-    font-weight: 600; padding: 4px 10px; border-radius: 999px; cursor: pointer; transition: color .3s;
-  }
-  .lang::before {
-    content: ""; position: absolute; top: 3px; bottom: 3px; left: 3px; width: calc(50% - 3px); border-radius: 999px;
-    background: linear-gradient(90deg, rgba(80, 227, 194, .25), rgba(139, 124, 255, .25)); transition: transform .4s var(--ease);
-  }
-  html[data-lang="tr"] .lang::before { transform: translateX(100%); }
-  html[data-lang="en"] .lang [data-set="en"], html[data-lang="tr"] .lang [data-set="tr"] { color: var(--fg); }
-  @media (max-width: 640px) { nav a { display: none; } }
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
 
-  /* Hero */
-  .hero { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: 96px 0 64px; }
-  .eyebrow {
-    display: inline-flex; align-items: center; gap: 8px; width: fit-content; font-size: .85rem; color: var(--muted);
-    border: 1px solid var(--line); background: var(--glass); padding: 6px 12px; border-radius: 999px;
-    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-  }
-  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 0 rgba(80, 227, 194, .6); animation: pulse 2.4s infinite; }
-  @keyframes pulse { 70% { box-shadow: 0 0 0 10px rgba(80, 227, 194, 0); } 100% { box-shadow: 0 0 0 0 rgba(80, 227, 194, 0); } }
-  h1 { font-size: clamp(2.6rem, 8vw, 5.4rem); line-height: 1.02; letter-spacing: -.03em; margin: 22px 0 14px; font-weight: 800; }
-  .grad {
-    background: linear-gradient(100deg, var(--teal), var(--violet) 55%, var(--pink));
-    background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent;
-    animation: sheen 9s ease-in-out infinite alternate;
-  }
-  @keyframes sheen { to { background-position: 100% 0; } }
-  .lead { font-size: clamp(1.05rem, 2.2vw, 1.3rem); color: var(--muted); max-width: 640px; margin: 0 0 30px; }
-  .lead strong { color: var(--fg); font-weight: 600; }
-  .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border-radius: 12px; text-decoration: none;
-    font-weight: 600; font-size: .95rem; color: var(--fg); border: 1px solid var(--line); background: var(--glass);
-    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-    transition: transform .35s var(--ease), border-color .35s, background .35s, box-shadow .35s;
-  }
-  .btn:hover { transform: translateY(-2px); border-color: rgba(139, 124, 255, .5); box-shadow: 0 10px 30px -12px rgba(139, 124, 255, .6); }
-  .btn.primary { background: linear-gradient(100deg, rgba(80, 227, 194, .9), rgba(139, 124, 255, .9)); color: #071019; border-color: transparent; }
-  .btn.primary:hover { box-shadow: 0 12px 34px -10px rgba(80, 227, 194, .7); }
-  .btn svg { width: 18px; height: 18px; flex: none; }
-  .scroll-hint { margin-top: 56px; color: var(--muted); font-size: .8rem; display: flex; align-items: center; gap: 10px; }
-  .scroll-hint i { width: 1px; height: 36px; background: linear-gradient(var(--teal), transparent); animation: drip 2.2s var(--ease) infinite; transform-origin: top; }
-  @keyframes drip { 0% { transform: scaleY(0); opacity: 1; } 70% { transform: scaleY(1); opacity: 1; } 100% { transform: scaleY(1); opacity: 0; } }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.65 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      overflow-x: hidden;
+    }
 
-  /* Sections */
-  section { padding: 72px 0; scroll-margin-top: 40px; }
-  .kicker { font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: var(--teal); font-weight: 700; margin: 0 0 10px; }
-  h2 { font-size: clamp(1.7rem, 4vw, 2.5rem); letter-spacing: -.02em; line-height: 1.15; margin: 0 0 22px; }
-  .panel {
-    border: 1px solid var(--line); background: var(--glass); border-radius: var(--radius); padding: 26px;
-    backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2);
-  }
-  .about { display: grid; grid-template-columns: 1.4fr 1fr; gap: 18px; }
-  .about p { margin: 0 0 12px; color: #cdd5ea; }
-  .facts { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
-  .facts li { display: flex; gap: 12px; align-items: flex-start; }
-  .facts .ic { width: 34px; height: 34px; border-radius: 10px; flex: none; display: grid; place-items: center; background: rgba(80, 227, 194, .1); color: var(--teal); }
-  .facts .ic svg { width: 18px; height: 18px; }
-  .facts small { display: block; color: var(--muted); font-size: .78rem; }
-  @media (max-width: 760px) { .about { grid-template-columns: 1fr; } }
+    html[data-lang="en"] .tr,
+    html[data-lang="tr"] .en {
+      display: none !important;
+    }
 
-  .timeline { display: grid; gap: 16px; }
-  .entry h3 { margin: 4px 0 2px; font-size: 1.12rem; }
-  .entry .when { font-size: .8rem; font-weight: 700; letter-spacing: .06em; color: var(--teal); }
-  .entry .sub { margin: 0 0 10px; color: var(--muted); font-size: .9rem; }
-  .entry p, .entry li { color: #cdd5ea; }
-  .entry p { margin: 0; }
-  .entry ul { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; }
-  .certs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 4px 24px; }
-  .certs li { padding: 10px 0; border-bottom: 1px solid var(--line); color: #dfe5f3; font-size: .95rem; }
-  .certs small { display: block; color: var(--muted); font-size: .8rem; }
-  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
-  .skills h3 { margin: 0 0 12px; font-size: 1rem; display: flex; align-items: center; gap: 10px; }
-  .skills h3::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--c, var(--teal)); box-shadow: 0 0 14px var(--c, var(--teal)); }
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-  .chip { font-size: .82rem; padding: 5px 10px; border-radius: 999px; border: 1px solid var(--line); color: #cfd6ea; background: rgba(255, 255, 255, 0.03); }
+    #field {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      display: block;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
 
-  .projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
-  .card {
-    position: relative; display: flex; flex-direction: column; gap: 10px; padding: 22px; border-radius: var(--radius);
-    border: 1px solid var(--line); background: var(--glass); color: inherit; text-decoration: none; overflow: hidden;
-    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-    transition: transform .45s var(--ease), border-color .45s;
-    --mx: 50%; --my: 50%;
-  }
-  .card::before {
-    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .45s;
-    background: radial-gradient(420px circle at var(--mx) var(--my), rgba(139, 124, 255, .16), transparent 45%);
-  }
-  .card:hover { transform: translateY(-4px); border-color: rgba(139, 124, 255, .45); }
-  .card:hover::before { opacity: 1; }
-  .card h3 { margin: 0; font-size: 1.08rem; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-  .card h3 svg { width: 16px; height: 16px; color: var(--muted); transition: transform .45s var(--ease), color .45s; flex: none; }
-  .card:hover h3 svg { transform: translate(3px, -3px); color: var(--teal); }
-  .card p { margin: 0; color: #c3cbe0; font-size: .93rem; flex: 1; }
-  .card .stack { display: flex; flex-wrap: wrap; gap: 6px; }
-  .card .stack span { font-size: .74rem; color: var(--muted); padding: 3px 8px; border-radius: 6px; background: rgba(255, 255, 255, .04); }
-  .card.featured { grid-column: 1 / -1; background: linear-gradient(120deg, rgba(80, 227, 194, .1), rgba(139, 124, 255, .1) 60%, rgba(14, 20, 40, .55)); }
-  .badge { font-size: .7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #071019; background: var(--teal); padding: 3px 8px; border-radius: 6px; width: fit-content; }
-  .more { margin-top: 22px; }
+    .veil {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 80% 65% at 50% 45%, rgba(7, 11, 22, 0), rgba(7, 11, 22, 0.55) 100%);
+    }
 
-  .contact { text-align: center; padding: 48px 26px; }
-  .contact p { color: var(--muted); max-width: 520px; margin: 0 auto 24px; }
-  .contact .ctas { justify-content: center; }
-  footer { position: relative; z-index: 2; text-align: center; color: var(--muted); font-size: .8rem; padding: 28px 16px 40px; }
-  footer a { color: var(--muted); }
+    .wrap {
+      position: relative;
+      z-index: 2;
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
 
-  /* Reveal on scroll */
-  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: var(--d, 0s); }
-  .reveal.in { opacity: 1; transform: none; }
-  .no-js .reveal { opacity: 1; transform: none; }
+    #field.on {
+      opacity: 1;
+    }
 
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+    /* Top bar */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      transition: background .4s var(--ease), border-color .4s var(--ease), backdrop-filter .4s var(--ease);
+      border-bottom: 1px solid transparent;
+    }
 
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *, *::before, *::after { animation: none !important; transition: none !important; }
-    .reveal { opacity: 1; transform: none; }
-  }
-</style>
+    header.scrolled {
+      background: rgba(7, 11, 22, 0.6);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-color: var(--line);
+    }
+
+    .bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      height: 64px;
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: .02em;
+      color: var(--fg);
+      text-decoration: none;
+    }
+
+    .brand b {
+      background: linear-gradient(90deg, var(--teal), var(--violet));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .92rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      transition: color .25s, background .25s;
+    }
+
+    nav a:hover {
+      color: var(--fg);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .lang {
+      display: inline-flex;
+      padding: 3px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--glass);
+      margin-left: 6px;
+      position: relative;
+    }
+
+    .lang button {
+      position: relative;
+      z-index: 1;
+      border: 0;
+      background: none;
+      color: var(--muted);
+      font: inherit;
+      font-size: .8rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: color .3s;
+    }
+
+    .lang::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      bottom: 3px;
+      left: 3px;
+      width: calc(50% - 3px);
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(80, 227, 194, .25), rgba(139, 124, 255, .25));
+      transition: transform .4s var(--ease);
+    }
+
+    html[data-lang="tr"] .lang::before {
+      transform: translateX(100%);
+    }
+
+    html[data-lang="en"] .lang [data-set="en"],
+    html[data-lang="tr"] .lang [data-set="tr"] {
+      color: var(--fg);
+    }
+
+    @media (max-width: 640px) {
+      nav a {
+        display: none;
+      }
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 96px 0 64px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      font-size: .85rem;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      background: var(--glass);
+      padding: 6px 12px;
+      border-radius: 999px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 0 0 0 rgba(80, 227, 194, .6);
+      animation: pulse 2.4s infinite;
+    }
+
+    @keyframes pulse {
+      70% {
+        box-shadow: 0 0 0 10px rgba(80, 227, 194, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(80, 227, 194, 0);
+      }
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 8vw, 5.4rem);
+      line-height: 1.02;
+      letter-spacing: -.03em;
+      margin: 22px 0 14px;
+      font-weight: 800;
+    }
+
+    .grad {
+      background: linear-gradient(100deg, var(--teal), var(--violet) 55%, var(--pink));
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: sheen 9s ease-in-out infinite alternate;
+    }
+
+    @keyframes sheen {
+      to {
+        background-position: 100% 0;
+      }
+    }
+
+    .lead {
+      font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 0 30px;
+    }
+
+    .lead strong {
+      color: var(--fg);
+      font-weight: 600;
+    }
+
+    .ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .95rem;
+      color: var(--fg);
+      border: 1px solid var(--line);
+      background: var(--glass);
+      transition: transform .35s var(--ease), border-color .35s, background .35s, box-shadow .35s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(139, 124, 255, .5);
+      box-shadow: 0 10px 30px -12px rgba(139, 124, 255, .6);
+    }
+
+    .btn.primary {
+      background: linear-gradient(100deg, rgba(80, 227, 194, .9), rgba(139, 124, 255, .9));
+      color: #071019;
+      border-color: transparent;
+    }
+
+    .btn.primary:hover {
+      box-shadow: 0 12px 34px -10px rgba(80, 227, 194, .7);
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+      flex: none;
+    }
+
+    /* Sections */
+    section {
+      padding: 72px 0;
+      scroll-margin-top: 40px;
+    }
+
+    section:not(.hero) {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 900px;
+    }
+
+    .kicker {
+      font-size: .78rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--teal);
+      font-weight: 700;
+      margin: 0 0 10px;
+    }
+
+    h2 {
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      letter-spacing: -.02em;
+      line-height: 1.15;
+      margin: 0 0 22px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      background: var(--glass);
+      border-radius: var(--radius);
+      padding: 26px;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 18px;
+    }
+
+    .about p {
+      margin: 0 0 12px;
+      color: #cdd5ea;
+    }
+
+    .facts {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .facts li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .facts .ic {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      flex: none;
+      display: grid;
+      place-items: center;
+      background: rgba(80, 227, 194, .1);
+      color: var(--teal);
+    }
+
+    .facts .ic svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .facts small {
+      display: block;
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    @media (max-width: 760px) {
+      .about {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .entry h3 {
+      margin: 4px 0 2px;
+      font-size: 1.12rem;
+    }
+
+    .entry .when {
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      color: var(--teal);
+    }
+
+    .entry .sub {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .entry p,
+    .entry li {
+      color: #cdd5ea;
+    }
+
+    .entry p {
+      margin: 0;
+    }
+
+    .entry ul {
+      margin: 0;
+      padding-left: 1.1em;
+      display: grid;
+      gap: 4px;
+    }
+
+    .certs {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 4px 24px;
+    }
+
+    .certs li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+      color: #dfe5f3;
+      font-size: .95rem;
+    }
+
+    .certs small {
+      display: block;
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+
+    .skills h3 {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .skills h3::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+      background: var(--c, var(--teal));
+      box-shadow: 0 0 14px var(--c, var(--teal));
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      font-size: .82rem;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: #cfd6ea;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 22px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--glass);
+      color: inherit;
+      text-decoration: none;
+      overflow: hidden;
+      transition: transform .45s var(--ease), border-color .45s;
+      --mx: 50%;
+      --my: 50%;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .45s;
+      background: radial-gradient(420px circle at var(--mx) var(--my), rgba(139, 124, 255, .16), transparent 45%);
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(139, 124, 255, .45);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.08rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .card h3 svg {
+      width: 16px;
+      height: 16px;
+      color: var(--muted);
+      transition: transform .45s var(--ease), color .45s;
+      flex: none;
+    }
+
+    .card:hover h3 svg {
+      transform: translate(3px, -3px);
+      color: var(--teal);
+    }
+
+    .card p {
+      margin: 0;
+      color: #c3cbe0;
+      font-size: .93rem;
+      flex: 1;
+    }
+
+    .card .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .card .stack span {
+      font-size: .74rem;
+      color: var(--muted);
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, .04);
+    }
+
+    .card.featured {
+      grid-column: 1 / -1;
+      background: linear-gradient(120deg, rgba(80, 227, 194, .1), rgba(139, 124, 255, .1) 60%, rgba(14, 20, 40, .55));
+    }
+
+    .badge {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: #071019;
+      background: var(--teal);
+      padding: 3px 8px;
+      border-radius: 6px;
+      width: fit-content;
+    }
+
+    .more {
+      margin-top: 22px;
+    }
+
+    .contact {
+      text-align: center;
+      padding: 48px 26px;
+    }
+
+    .contact p {
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 24px;
+    }
+
+    .contact .ctas {
+      justify-content: center;
+    }
+
+    footer {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: var(--muted);
+      font-size: .8rem;
+      padding: 28px 16px 40px;
+    }
+
+    footer a {
+      color: var(--muted);
+    }
+
+    /* Reveal on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .9s var(--ease), transform .9s var(--ease);
+      transition-delay: var(--d, 0s);
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    .no-js .reveal {
+      opacity: 1;
+      transform: none;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--teal);
+      outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<canvas id="field" aria-hidden="true"></canvas>
-<div class="veil" aria-hidden="true"></div>
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="veil" aria-hidden="true"></div>
 
-<header id="top">
-  <div class="bar">
-    <a class="brand" href="#"><b>TBA</b></a>
-    <nav aria-label="Main">
-      <a href="#about"><span class="en">About</span><span class="tr">Hakkımda</span></a>
-      <a href="#background"><span class="en">Background</span><span class="tr">Geçmiş</span></a>
-      <a href="#projects"><span class="en">Projects</span><span class="tr">Projeler</span></a>
-      <a href="#contact"><span class="en">Contact</span><span class="tr">İletişim</span></a>
-      <div class="lang" role="group" aria-label="Language / Dil">
-        <button type="button" data-set="en" aria-label="English">EN</button>
-        <button type="button" data-set="tr" aria-label="Türkçe">TR</button>
-      </div>
-    </nav>
-  </div>
-</header>
-
-<main class="wrap">
-  <section class="hero">
-    <span class="eyebrow reveal"><span class="dot"></span>
-      <span class="en">Computer Engineer · Ankara, Türkiye</span>
-      <span class="tr">Bilgisayar Mühendisi · Ankara, Türkiye</span>
-    </span>
-    <h1 class="reveal" style="--d:.08s">Talha Burak<br><span class="grad">Aydın</span></h1>
-    <p class="lead reveal" style="--d:.16s">
-      <span class="en">I graduated in Computer Engineering from Konya Technical University in 2024. I took courses and built learning projects in data engineering and data science.</span>
-      <span class="tr">2024'te Konya Teknik Üniversitesi Bilgisayar Mühendisliği bölümünden mezun oldum. Veri mühendisliği ve veri bilimi alanında eğitimler aldım ve öğrenme amaçlı projeler yaptım.</span>
-    </p>
-    <div class="ctas reveal" style="--d:.24s">
-      <a class="btn primary" href="https://github.com/TallTalha" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
-        GitHub
-      </a>
-      <a class="btn" href="https://tr.linkedin.com/in/talhaburakaydin" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
-        LinkedIn
-      </a>
-      <a class="btn" href="mailto:talhaburakaydin.official@gmail.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-        <span class="en">Email</span><span class="tr">E-posta</span>
-      </a>
+  <header id="top">
+    <div class="bar">
+      <a class="brand" href="#"><b>TBA</b></a>
+      <nav aria-label="Main">
+        <a href="#about"><span class="en">About</span><span class="tr">Hakkımda</span></a>
+        <a href="#background"><span class="en">Background</span><span class="tr">Geçmiş</span></a>
+        <a href="#projects"><span class="en">Projects</span><span class="tr">Projeler</span></a>
+        <a href="#contact"><span class="en">Contact</span><span class="tr">İletişim</span></a>
+        <div class="lang" role="group" aria-label="Language / Dil">
+          <button type="button" data-set="en" aria-label="English">EN</button>
+          <button type="button" data-set="tr" aria-label="Türkçe">TR</button>
+        </div>
+      </nav>
     </div>
-    <div class="scroll-hint reveal" style="--d:.4s"><i></i><span class="en">Scroll</span><span class="tr">Kaydır</span></div>
-  </section>
+  </header>
 
-  <section id="about">
-    <p class="kicker reveal"><span class="en">About</span><span class="tr">Hakkımda</span></p>
-    <h2 class="reveal"><span class="en">A short introduction</span><span class="tr">Kısaca ben</span></h2>
-    <div class="about">
+  <main class="wrap">
+    <section class="hero">
+      <span class="eyebrow reveal"><span class="dot"></span>
+        <span class="en">Computer Engineer · Ankara, Türkiye</span>
+        <span class="tr">Bilgisayar Mühendisi · Ankara, Türkiye</span>
+      </span>
+      <h1 class="reveal" style="--d:.08s">Talha Burak<br><span class="grad">Aydın</span></h1>
+      <p class="lead reveal" style="--d:.16s">
+        <span class="en">I graduated in Computer Engineering from Konya Technical University in 2024. I took courses in data engineering and data science and built personal projects.</span>
+        <span class="tr">2024'te Konya Teknik Üniversitesi Bilgisayar Mühendisliği bölümünden mezun oldum. Veri
+          mühendisliği ve veri bilimi alanında eğitimler aldım ve bireysel projeler ürettim.</span>
+      </p>
+      <div class="ctas reveal" style="--d:.24s">
+        <a class="btn primary" href="https://github.com/TallTalha" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z" />
+          </svg>
+          GitHub
+        </a>
+        <a class="btn" href="https://tr.linkedin.com/in/talhaburakaydin" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z" />
+          </svg>
+          LinkedIn
+        </a>
+        <a class="btn" href="mailto:talhaburakaydin.official@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m3 7 9 6 9-6" />
+          </svg>
+          <span class="en">Email</span><span class="tr">E-posta</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="about">
+      <p class="kicker reveal"><span class="en">About</span><span class="tr">Hakkımda</span></p>
+      <h2 class="reveal"><span class="en">A short introduction</span><span class="tr">Kısaca ben</span></h2>
+      <div class="about">
+        <div class="panel reveal">
+          <p class="en">I am a computer engineer living in Ankara. During and after university I worked on data technologies, artificial intelligence and machine learning.</p>
+          <p class="tr">Ankara'da yaşayan bir bilgisayar mühendisiyim. Üniversite sırasında ve sonrasında veri
+            teknolojileri, yapay zekâ ve makine öğrenmesi üzerine çalıştım.</p>
+          <p class="en">In 2024 and 2025 I completed courses from BTK Academy, Miuul, Akbank and Aygaz. As part of these
+            courses I built practice projects with Python, Apache Kafka, Apache Spark, PostgreSQL, MongoDB and
+            Elasticsearch.</p>
+          <p class="tr">2024 ve 2025'te BTK Akademi, Miuul, Akbank ve Aygaz eğitimlerini tamamladım. Bu eğitimler
+            kapsamında Python, Apache Kafka, Apache Spark, PostgreSQL, MongoDB ve Elasticsearch ile uygulama projeleri
+            yaptım.</p>
+          <p class="en">I have a background in data engineering, but these days I focus on personal projects. I build end-to-end apps with AI tools (vibe coding).</p>
+          <p class="tr">Veri mühendisliği geçmişine sahibim fakat bu günlerde kişisel projelere odaklandım. Yapay zeka
+            araçlarıyla (Vibe coding) uçtan uca uygulamalar geliştiriyorum.</p>
+        </div>
+        <ul class="panel facts reveal" style="--d:.1s">
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m2 9 10-5 10 5-10 5z" />
+                <path d="M6 11v5c3 2 9 2 12 0v-5" />
+              </svg></span>
+            <div><small><span class="en">Education</span><span class="tr">Eğitim</span></small><span class="en">B.Sc.
+                Computer Engineering, 2024</span><span class="tr">Bilgisayar Mühendisliği lisans, 2024</span></div>
+          </li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" />
+                <circle cx="12" cy="10" r="2.5" />
+              </svg></span>
+            <div><small><span class="en">Location</span><span class="tr">Konum</span></small>Ankara, Türkiye</div>
+          </li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 5h16v11H8l-4 4z" />
+              </svg></span>
+            <div><small><span class="en">Languages</span><span class="tr">Diller</span></small><span class="en">Turkish
+                (native), English (B1)</span><span class="tr">Türkçe (ana dil), İngilizce (B1)</span></div>
+          </li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 2" />
+              </svg></span>
+            <div><small><span class="en">Interests</span><span class="tr">İlgi alanları</span></small><span
+                class="en">Data technologies, AI, machine learning</span><span class="tr">Veri teknolojileri, yapay
+                zekâ, makine öğrenmesi</span></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="background">
+      <p class="kicker reveal"><span class="en">Background</span><span class="tr">Geçmiş</span></p>
+      <h2 class="reveal"><span class="en">Education and experience</span><span class="tr">Eğitim ve deneyim</span></h2>
+      <div class="timeline">
+        <div class="panel entry reveal">
+          <div class="when">2020 – 2024</div>
+          <h3>Konya Technical University</h3>
+          <p class="sub"><span class="en">B.Sc. in Computer Engineering · Selçuklu, Konya</span><span
+              class="tr">Bilgisayar Mühendisliği lisans · Selçuklu, Konya</span></p>
+          <p class="en">Graduation project: a thesis on detecting lung infections with machine learning models. I built a model that detects lung lesions with 97% accuracy.</p>
+          <p class="tr">Bitirme projesi: Makine öğrenmesi modelleriyle akciğer enfeksiyonlarının tespiti üzerine tez
+            hazırladım. %97'lik başarıyla akciğer lezyonlarını tespit eden model inşa ettim.</p>
+        </div>
+        <div class="panel entry reveal" style="--d:.08s">
+          <div class="when"><span class="en">Jul – Sep 2023</span><span class="tr">Tem – Eyl 2023</span></div>
+          <h3><span class="en">Revenue Administration (GİB)</span><span class="tr">Gelir İdaresi Başkanlığı</span></h3>
+          <p class="sub"><span class="en">Summer intern · Technology Department, Database Management Division ·
+              Ankara</span><span class="tr">Yaz stajyeri · Teknoloji Dairesi, Veritabanı Yönetimi Bölümü · Ankara</span>
+          </p>
+          <ul class="en">
+            <li>Learned how the technology department of a public institution works.</li>
+            <li>Researched and tested PostgreSQL and Linux topics: explicit locking, MVCC, transaction ID wraparound and
+              vacuum.</li>
+            <li>Gave a technical presentation of the results to mentors and department staff.</li>
+          </ul>
+          <ul class="tr">
+            <li>Bir kamu kurumunun teknoloji biriminin nasıl çalıştığını öğrendim.</li>
+            <li>PostgreSQL ve Linux konularını araştırıp test ettim: explicit locking, MVCC, transaction ID wraparound
+              ve vacuum.</li>
+            <li>Elde ettiğim sonuçları mentorlara ve birim çalışanlarına teknik sunum yaptım.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <p class="kicker reveal"><span class="en">Skills</span><span class="tr">Teknolojiler</span></p>
+      <h2 class="reveal"><span class="en">Technologies I have used</span><span class="tr">Kullandığım
+          teknolojiler</span></h2>
+      <div class="skills">
+        <div class="panel reveal" style="--c:var(--teal)">
+          <h3><span class="en">Programming</span><span class="tr">Programlama</span></h3>
+          <div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span
+              class="chip">C#</span><span class="chip">C</span></div>
+        </div>
+        <div class="panel reveal" style="--c:var(--violet); --d:.06s">
+          <h3><span class="en">Data</span><span class="tr">Veri</span></h3>
+          <div class="chips"><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Apache
+              Spark</span><span class="chip">Apache Kafka</span><span class="chip">Matplotlib</span><span
+              class="chip">Seaborn</span></div>
+        </div>
+        <div class="panel reveal" style="--c:var(--pink); --d:.12s">
+          <h3><span class="en">Databases</span><span class="tr">Veritabanları</span></h3>
+          <div class="chips"><span class="chip">PostgreSQL</span><span class="chip">MSSQL</span><span
+              class="chip">MongoDB</span></div>
+        </div>
+        <div class="panel reveal" style="--c:#ffd36e; --d:.18s">
+          <h3><span class="en">Tools</span><span class="tr">Araçlar</span></h3>
+          <div class="chips"><span class="chip">Linux</span><span class="chip">Jupyter Notebook</span><span
+              class="chip">Google Colab</span><span class="chip">Visual Studio</span><span class="chip">PyCharm</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificates">
+      <p class="kicker reveal"><span class="en">Certificates</span><span class="tr">Sertifikalar</span></p>
+      <h2 class="reveal"><span class="en">Courses and certificates</span><span class="tr">Eğitimler ve
+          sertifikalar</span></h2>
       <div class="panel reveal">
-        <p class="en">I am a computer engineer living in Ankara. During and after university I was interested in data technologies, artificial intelligence and machine learning.</p>
-        <p class="tr">Ankara'da yaşayan bir bilgisayar mühendisiyim. Üniversite sırasında ve sonrasında veri teknolojileri, yapay zekâ ve makine öğrenmesiyle ilgilendim.</p>
-        <p class="en">In 2024 and 2025 I completed courses from BTK Academy, Miuul, Akbank and Aygaz. As part of these courses I built practice projects with Python, Apache Kafka, Apache Spark, PostgreSQL, MongoDB and Elasticsearch.</p>
-        <p class="tr">2024 ve 2025'te BTK Akademi, Miuul, Akbank ve Aygaz eğitimlerini tamamladım. Bu eğitimler kapsamında Python, Apache Kafka, Apache Spark, PostgreSQL, MongoDB ve Elasticsearch ile uygulama projeleri yaptım.</p>
-        <p class="en">I have not worked on data engineering for some time. These days I am trying to make an Android app with AI coding tools (vibe coding) as a personal experiment.</p>
-        <p class="tr">Bir süredir veri mühendisliği üzerinde çalışmıyorum. Bu aralar kişisel bir deneme olarak yapay zekâ araçlarıyla (vibe coding) bir Android uygulaması yapmaya çalışıyorum.</p>
-      </div>
-      <ul class="panel facts reveal" style="--d:.1s">
-        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg></span>
-          <div><small><span class="en">Education</span><span class="tr">Eğitim</span></small><span class="en">B.Sc. Computer Engineering, 2024</span><span class="tr">Bilgisayar Mühendisliği lisans, 2024</span></div></li>
-        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-          <div><small><span class="en">Location</span><span class="tr">Konum</span></small>Ankara, Türkiye</div></li>
-        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg></span>
-          <div><small><span class="en">Languages</span><span class="tr">Diller</span></small><span class="en">Turkish (native), English (B1)</span><span class="tr">Türkçe (ana dil), İngilizce (B1)</span></div></li>
-        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-          <div><small><span class="en">Interests</span><span class="tr">İlgi alanları</span></small><span class="en">Data technologies, AI, machine learning</span><span class="tr">Veri teknolojileri, yapay zekâ, makine öğrenmesi</span></div></li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="background">
-    <p class="kicker reveal"><span class="en">Background</span><span class="tr">Geçmiş</span></p>
-    <h2 class="reveal"><span class="en">Education and experience</span><span class="tr">Eğitim ve deneyim</span></h2>
-    <div class="timeline">
-      <div class="panel entry reveal">
-        <div class="when">2020 – 2024</div>
-        <h3>Konya Technical University</h3>
-        <p class="sub"><span class="en">B.Sc. in Computer Engineering · Selçuklu, Konya</span><span class="tr">Bilgisayar Mühendisliği lisans · Selçuklu, Konya</span></p>
-        <p class="en">Graduation project: detection of lung infections with machine learning models.</p>
-        <p class="tr">Bitirme projesi: makine öğrenmesi modelleriyle akciğer enfeksiyonlarının tespiti.</p>
-      </div>
-      <div class="panel entry reveal" style="--d:.08s">
-        <div class="when"><span class="en">Jul – Sep 2023</span><span class="tr">Tem – Eyl 2023</span></div>
-        <h3><span class="en">Revenue Administration (GİB)</span><span class="tr">Gelir İdaresi Başkanlığı</span></h3>
-        <p class="sub"><span class="en">Summer intern · Technology Department, Database Management Division · Ankara</span><span class="tr">Yaz stajyeri · Teknoloji Dairesi, Veritabanı Yönetimi Bölümü · Ankara</span></p>
-        <ul class="en">
-          <li>Learned how the technology department of a public institution works.</li>
-          <li>Researched and tested PostgreSQL and Linux topics: explicit locking, MVCC, transaction ID wraparound and vacuum.</li>
-          <li>Presented the results to mentors and department staff.</li>
-        </ul>
-        <ul class="tr">
-          <li>Bir kamu kurumunun teknoloji biriminin nasıl çalıştığını öğrendim.</li>
-          <li>PostgreSQL ve Linux konularını araştırıp test ettim: explicit locking, MVCC, transaction ID wraparound ve vacuum.</li>
-          <li>Sonuçları mentorlara ve birim çalışanlarına sundum.</li>
+        <ul class="certs">
+          <li><span class="en">Big Data Applications</span><span class="tr">Büyük Veri Uygulamaları</span><small>BTK
+              <span class="en">Academy</span><span class="tr">Akademi</span> · 2025</small></li>
+          <li><span class="en">Introduction to Big Data</span><span class="tr">Büyük Veriye Giriş</span><small>BTK <span
+                class="en">Academy</span><span class="tr">Akademi</span> · 2025</small></li>
+          <li><span class="en">Python Programming for Data Science</span><span class="tr">Veri Bilimi için Python
+              Programlama</span><small>Miuul · 2025</small></li>
+          <li><span class="en">Introduction to Deep Learning</span><span class="tr">Derin Öğrenmeye
+              Giriş</span><small>BTK <span class="en">Academy</span><span class="tr">Akademi</span> · 2025</small></li>
+          <li><span class="en">Introduction to Data Science</span><span class="tr">Veri Bilimine Giriş</span><small>BTK
+              <span class="en">Academy</span><span class="tr">Akademi</span> · 2025</small></li>
+          <li><span class="en">Learning SQL Through Applications</span><span class="tr">Uygulamalarla SQL
+              Öğreniyorum</span><small>BTK <span class="en">Academy</span><span class="tr">Akademi</span> · 2024</small>
+          </li>
+          <li><span class="en">Generative AI Camp: Introduction to Prompt Engineering</span><span class="tr">Üretken
+              Yapay Zekâ Kampı: Prompt Mühendisliğine Giriş</span><small>Aygaz · 2024</small></li>
+          <li><span class="en">Python Next-Generation Project Camp</span><span class="tr">Python Yeni Nesil Proje
+              Kampı</span><small>Akbank · 2024</small></li>
+          <li><span class="en">Machine Learning</span><span class="tr">Makine Öğrenmesi</span><small>Miuul ·
+              2023</small></li>
+          <li>Web3 Practicum<small>Akbank · 2022</small></li>
         </ul>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="skills">
-    <p class="kicker reveal"><span class="en">Skills</span><span class="tr">Teknolojiler</span></p>
-    <h2 class="reveal"><span class="en">Technologies I have used</span><span class="tr">Kullandığım teknolojiler</span></h2>
-    <div class="skills">
-      <div class="panel reveal" style="--c:var(--teal)">
-        <h3><span class="en">Programming</span><span class="tr">Programlama</span></h3>
-        <div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">C#</span><span class="chip">C</span></div>
+    <section id="projects">
+      <p class="kicker reveal"><span class="en">Projects</span><span class="tr">Projeler</span></p>
+      <h2 class="reveal"><span class="en">Course and practice projects (2025)</span><span class="tr">Eğitim ve uygulama
+          projeleri (2025)</span></h2>
+      <div class="projects">
+        <a class="card reveal" href="https://github.com/TallTalha/banking-big-data-app" target="_blank" rel="noopener">
+          <h3><span class="en">Big Data Applications in Banking</span><span class="tr">Bankacılıkta Büyük Veri
+              Uygulamaları</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <path d="M7 17 17 7M8 7h9v9" />
+            </svg></h3>
+          <p class="en">Three ETL exercises from the BTK Academy big data course: simulated money transfers processed
+            from Kafka with Spark, a PostgreSQL-to-MongoDB transfer with Spark, and a card usage analysis.</p>
+          <p class="tr">BTK Akademi büyük veri eğitiminden üç ETL çalışması: Kafka'dan Spark ile işlenen simüle
+            EFT/havale verisi, Spark ile PostgreSQL'den MongoDB'ye aktarım ve kart kullanım analizi.</p>
+          <div class="stack">
+            <span>Python</span><span>Kafka</span><span>Spark</span><span>PostgreSQL</span><span>MongoDB</span>
+          </div>
+        </a>
+        <a class="card reveal" style="--d:.06s" href="https://github.com/TallTalha/geographic-big-data-app"
+          target="_blank" rel="noopener">
+          <h3><span class="en">Geospatial Big Data Application</span><span class="tr">Coğrafi Büyük Veri
+              Uygulaması</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <path d="M7 17 17 7M8 7h9v9" />
+            </svg></h3>
+          <p class="en">Loaded a JSON dataset of residential sites with locations into Elasticsearch with the bulk API,
+            then queried and showed it on maps in Kibana.</p>
+          <p class="tr">Konumlu site verisi içeren bir JSON veri setini bulk API ile Elasticsearch'e yükledim; Kibana'da
+            sorguladım ve harita üzerinde gösterdim.</p>
+          <div class="stack"><span>Python</span><span>Elasticsearch</span><span>Kibana</span></div>
+        </a>
+        <a class="card reveal" href="https://github.com/TallTalha/social-media-big-data-app" target="_blank"
+          rel="noopener">
+          <h3><span class="en">Social Media Big Data Application</span><span class="tr">Sosyal Medya Büyük Veri
+              Uygulaması</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <path d="M7 17 17 7M8 7h9v9" />
+            </svg></h3>
+          <p class="en">Simulated posts with the X API and Faker, sent them to Kafka and MongoDB, and made daily and
+            per-user summaries with Spark.</p>
+          <p class="tr">X API ve Faker ile gönderi verisi simüle ettim, Kafka ve MongoDB'ye gönderdim; Spark ile günlük
+            ve kullanıcı bazlı özetler çıkardım.</p>
+          <div class="stack"><span>Python</span><span>Kafka</span><span>Spark</span><span>MongoDB</span></div>
+        </a>
+        <a class="card reveal" style="--d:.06s" href="https://github.com/TallTalha/e-commerce-big-data-app"
+          target="_blank" rel="noopener">
+          <h3><span class="en">E-Commerce Big Data Application</span><span class="tr">E-Ticaret Büyük Veri
+              Uygulaması</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <path d="M7 17 17 7M8 7h9v9" />
+            </svg></h3>
+          <p class="en">A FastAPI service that simulates search-box logs, sends them to Kafka, and Spark jobs that write
+            daily and near-real-time summaries to MongoDB.</p>
+          <p class="tr">Arama kutusu loglarını simüle eden bir FastAPI servisi, logları Kafka'ya gönderme ve günlük ile
+            yakın gerçek zamanlı özetleri MongoDB'ye yazan Spark işleri.</p>
+          <div class="stack"><span>FastAPI</span><span>Kafka</span><span>Spark</span><span>MongoDB</span></div>
+        </a>
+        <a class="card reveal" href="https://github.com/TallTalha/finance-data-etl-pipeline" target="_blank"
+          rel="noopener">
+          <h3><span class="en">Financial Data ETL Pipeline</span><span class="tr">Finansal Veri ETL Boru Hattı</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M7 17 17 7M8 7h9v9" />
+            </svg>
+          </h3>
+          <p class="en">A Dockerized pipeline that gets stock data from the Alpha Vantage API, processes it with Pandas
+            and loads it into a PostgreSQL star schema.</p>
+          <p class="tr">Alpha Vantage API'sinden hisse verisi alan, Pandas ile işleyen ve PostgreSQL yıldız şemasına
+            yükleyen Docker tabanlı bir boru hattı.</p>
+          <div class="stack"><span>Python</span><span>Pandas</span><span>PostgreSQL</span><span>Docker</span></div>
+        </a>
+        <div class="card reveal" style="--d:.06s">
+          <h3><span class="en">Batteo (personal experiment)</span><span class="tr">Batteo (kişisel deneme)</span></h3>
+          <p class="en">A battery information app for Android that I am making with AI coding tools (vibe coding). I am
+            not an Android developer; this is a learning experiment.</p>
+          <p class="tr">Yapay zekâ araçlarıyla (vibe coding) yaptığım bir Android pil bilgisi uygulaması. Android
+            geliştiricisi değilim; bu bir öğrenme denemesi.</p>
+          <div class="stack"><span>Vibe coding</span><span>Android</span></div>
+        </div>
       </div>
-      <div class="panel reveal" style="--c:var(--violet); --d:.06s">
-        <h3><span class="en">Data</span><span class="tr">Veri</span></h3>
-        <div class="chips"><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Apache Spark</span><span class="chip">Apache Kafka</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span></div>
+      <div class="more reveal">
+        <a class="btn" href="https://github.com/TallTalha?tab=repositories" target="_blank" rel="noopener">
+          <span class="en">All repositories on GitHub</span><span class="tr">GitHub'daki tüm depolar</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        </a>
       </div>
-      <div class="panel reveal" style="--c:var(--pink); --d:.12s">
-        <h3><span class="en">Databases</span><span class="tr">Veritabanları</span></h3>
-        <div class="chips"><span class="chip">PostgreSQL</span><span class="chip">MSSQL</span><span class="chip">MongoDB</span></div>
+    </section>
+
+    <section id="contact">
+      <div class="panel contact reveal">
+        <p class="kicker"><span class="en">Contact</span><span class="tr">İletişim</span></p>
+        <h2><span class="en">Get in touch</span><span class="tr">İletişime geçin</span></h2>
+        <p class="en">You can reach me by email or on LinkedIn.</p>
+        <p class="tr">Bana e-posta veya LinkedIn üzerinden ulaşabilirsiniz.</p>
+        <div class="ctas">
+          <a class="btn primary" href="mailto:talhaburakaydin.official@gmail.com">talhaburakaydin.official@gmail.com</a>
+          <a class="btn" href="https://tr.linkedin.com/in/talhaburakaydin" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
       </div>
-      <div class="panel reveal" style="--c:#ffd36e; --d:.18s">
-        <h3><span class="en">Tools</span><span class="tr">Araçlar</span></h3>
-        <div class="chips"><span class="chip">Linux</span><span class="chip">Jupyter Notebook</span><span class="chip">Google Colab</span><span class="chip">Visual Studio</span><span class="chip">PyCharm</span></div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <section id="certificates">
-    <p class="kicker reveal"><span class="en">Certificates</span><span class="tr">Sertifikalar</span></p>
-    <h2 class="reveal"><span class="en">Courses and certificates</span><span class="tr">Eğitimler ve sertifikalar</span></h2>
-    <div class="panel reveal">
-      <ul class="certs">
-        <li><span class="en">Big Data Applications</span><span class="tr">Büyük Veri Uygulamaları</span><small>BTK <span class="en">Academy</span><span class="tr">Akademi</span> · 2025</small></li>
-        <li><span class="en">Introduction to Big Data</span><span class="tr">Büyük Veriye Giriş</span><small>BTK <span class="en">Academy</span><span class="tr">Akademi</span> · 2025</small></li>
-        <li><span class="en">Python Programming for Data Science</span><span class="tr">Veri Bilimi için Python Programlama</span><small>Miuul · 2025</small></li>
-        <li><span class="en">Introduction to Deep Learning</span><span class="tr">Derin Öğrenmeye Giriş</span><small>BTK <span class="en">Academy</span><span class="tr">Akademi</span> · 2025</small></li>
-        <li><span class="en">Introduction to Data Science</span><span class="tr">Veri Bilimine Giriş</span><small>BTK <span class="en">Academy</span><span class="tr">Akademi</span> · 2025</small></li>
-        <li><span class="en">Learning SQL Through Applications</span><span class="tr">Uygulamalarla SQL Öğreniyorum</span><small>BTK <span class="en">Academy</span><span class="tr">Akademi</span> · 2024</small></li>
-        <li><span class="en">Generative AI Camp: Introduction to Prompt Engineering</span><span class="tr">Üretken Yapay Zekâ Kampı: Prompt Mühendisliğine Giriş</span><small>Aygaz · 2024</small></li>
-        <li><span class="en">Python Next-Generation Project Camp</span><span class="tr">Python Yeni Nesil Proje Kampı</span><small>Akbank · 2024</small></li>
-        <li><span class="en">Machine Learning</span><span class="tr">Makine Öğrenmesi</span><small>Miuul · 2023</small></li>
-        <li>Web3 Practicum<small>Akbank · 2022</small></li>
-      </ul>
-    </div>
-  </section>
+  <footer>
+    © <span id="y">2026</span> Talha Burak Aydın ·
+    <a href="https://talltalha.github.io/batteo-privacy/"><span class="en">Batteo privacy policy</span><span
+        class="tr">Batteo gizlilik politikası</span></a>
+  </footer>
 
-  <section id="projects">
-    <p class="kicker reveal"><span class="en">Projects</span><span class="tr">Projeler</span></p>
-    <h2 class="reveal"><span class="en">Course and practice projects (2025)</span><span class="tr">Eğitim ve uygulama projeleri (2025)</span></h2>
-    <div class="projects">
-      <a class="card reveal" href="https://github.com/TallTalha/banking-big-data-app" target="_blank" rel="noopener">
-        <h3><span class="en">Big Data Applications in Banking</span><span class="tr">Bankacılıkta Büyük Veri Uygulamaları</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
-        <p class="en">Three ETL exercises from the BTK Academy big data course: simulated money transfers processed from Kafka with Spark, a PostgreSQL-to-MongoDB transfer with Spark, and a card usage analysis.</p>
-        <p class="tr">BTK Akademi büyük veri eğitiminden üç ETL çalışması: Kafka'dan Spark ile işlenen simüle EFT/havale verisi, Spark ile PostgreSQL'den MongoDB'ye aktarım ve kart kullanım analizi.</p>
-        <div class="stack"><span>Python</span><span>Kafka</span><span>Spark</span><span>PostgreSQL</span><span>MongoDB</span></div>
-      </a>
-      <a class="card reveal" style="--d:.06s" href="https://github.com/TallTalha/geographic-big-data-app" target="_blank" rel="noopener">
-        <h3><span class="en">Geospatial Big Data Application</span><span class="tr">Coğrafi Büyük Veri Uygulaması</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
-        <p class="en">Loaded a JSON dataset of residential sites with locations into Elasticsearch with the bulk API, then queried and showed it on maps in Kibana.</p>
-        <p class="tr">Konumlu site verisi içeren bir JSON veri setini bulk API ile Elasticsearch'e yükledim; Kibana'da sorguladım ve harita üzerinde gösterdim.</p>
-        <div class="stack"><span>Python</span><span>Elasticsearch</span><span>Kibana</span></div>
-      </a>
-      <a class="card reveal" href="https://github.com/TallTalha/social-media-big-data-app" target="_blank" rel="noopener">
-        <h3><span class="en">Social Media Big Data Application</span><span class="tr">Sosyal Medya Büyük Veri Uygulaması</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
-        <p class="en">Simulated posts with the X API and Faker, sent them to Kafka and MongoDB, and made daily and per-user summaries with Spark.</p>
-        <p class="tr">X API ve Faker ile gönderi verisi simüle ettim, Kafka ve MongoDB'ye gönderdim; Spark ile günlük ve kullanıcı bazlı özetler çıkardım.</p>
-        <div class="stack"><span>Python</span><span>Kafka</span><span>Spark</span><span>MongoDB</span></div>
-      </a>
-      <a class="card reveal" style="--d:.06s" href="https://github.com/TallTalha/e-commerce-big-data-app" target="_blank" rel="noopener">
-        <h3><span class="en">E-Commerce Big Data Application</span><span class="tr">E-Ticaret Büyük Veri Uygulaması</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
-        <p class="en">A FastAPI service that simulates search-box logs, sends them to Kafka, and Spark jobs that write daily and near-real-time summaries to MongoDB.</p>
-        <p class="tr">Arama kutusu loglarını simüle eden bir FastAPI servisi, logları Kafka'ya gönderme ve günlük ile yakın gerçek zamanlı özetleri MongoDB'ye yazan Spark işleri.</p>
-        <div class="stack"><span>FastAPI</span><span>Kafka</span><span>Spark</span><span>MongoDB</span></div>
-      </a>
-      <a class="card reveal" href="https://github.com/TallTalha/finance-data-etl-pipeline" target="_blank" rel="noopener">
-        <h3><span class="en">Financial Data ETL Pipeline</span><span class="tr">Finansal Veri ETL Boru Hattı</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
-        <p class="en">A Dockerized pipeline that gets stock data from the Alpha Vantage API, processes it with Pandas and loads it into a PostgreSQL star schema.</p>
-        <p class="tr">Alpha Vantage API'sinden hisse verisi alan, Pandas ile işleyen ve PostgreSQL yıldız şemasına yükleyen Docker tabanlı bir boru hattı.</p>
-        <div class="stack"><span>Python</span><span>Pandas</span><span>PostgreSQL</span><span>Docker</span></div>
-      </a>
-      <div class="card reveal" style="--d:.06s">
-        <h3><span class="en">Batteo (personal experiment)</span><span class="tr">Batteo (kişisel deneme)</span></h3>
-        <p class="en">A battery information app for Android that I am making with AI coding tools (vibe coding). I am not an Android developer; this is a learning experiment.</p>
-        <p class="tr">Yapay zekâ araçlarıyla (vibe coding) yaptığım bir Android pil bilgisi uygulaması. Android geliştiricisi değilim; bu bir öğrenme denemesi.</p>
-        <div class="stack"><span>Vibe coding</span><span>Android</span></div>
-      </div>
-    </div>
-    <div class="more reveal">
-      <a class="btn" href="https://github.com/TallTalha?tab=repositories" target="_blank" rel="noopener">
-        <span class="en">All repositories on GitHub</span><span class="tr">GitHub'daki tüm depolar</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-    </div>
-  </section>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      document.getElementById('y').textContent = new Date().getFullYear();
 
-  <section id="contact">
-    <div class="panel contact reveal">
-      <p class="kicker"><span class="en">Contact</span><span class="tr">İletişim</span></p>
-      <h2><span class="en">Get in touch</span><span class="tr">İletişime geçin</span></h2>
-      <p class="en">You can reach me by email or on LinkedIn.</p>
-      <p class="tr">Bana e-posta veya LinkedIn üzerinden ulaşabilirsiniz.</p>
-      <div class="ctas">
-        <a class="btn primary" href="mailto:talhaburakaydin.official@gmail.com">talhaburakaydin.official@gmail.com</a>
-        <a class="btn" href="https://tr.linkedin.com/in/talhaburakaydin" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </div>
-  </section>
-</main>
+      // Language switch
+      document.querySelectorAll('.lang button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var l = b.dataset.set;
+          root.lang = l; root.dataset.lang = l;
+          try { localStorage.setItem('lang', l); } catch (e) { }
+        });
+      });
 
-<footer>
-  © <span id="y">2026</span> Talha Burak Aydın ·
-  <a href="https://talltalha.github.io/batteo-privacy/"><span class="en">Batteo privacy policy</span><span class="tr">Batteo gizlilik politikası</span></a>
-</footer>
+      // Header background after scrolling
+      var header = document.getElementById('top');
+      var onScroll = function () { header.classList.toggle('scrolled', scrollY > 24); };
+      addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
-<script>
-(function () {
-  var root = document.documentElement;
-  document.getElementById('y').textContent = new Date().getFullYear();
+      // Reveal on scroll
+      var items = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (es) {
+          es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+        items.forEach(function (el) { io.observe(el); });
+      } else items.forEach(function (el) { el.classList.add('in'); });
 
-  // Language switch
-  document.querySelectorAll('.lang button').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var l = b.dataset.set;
-      root.lang = l; root.dataset.lang = l;
-      try { localStorage.setItem('lang', l); } catch (e) {}
-    });
-  });
+      // Card glow follows the pointer
+      document.querySelectorAll('.card').forEach(function (c) {
+        c.addEventListener('pointermove', function (e) {
+          var r = c.getBoundingClientRect();
+          c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+          c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        });
+      });
 
-  // Header background after scrolling
-  var header = document.getElementById('top');
-  var onScroll = function () { header.classList.toggle('scrolled', scrollY > 24); };
-  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+      // Flow field background
+      var cv = document.getElementById('field');
+      var ctx = cv.getContext('2d', { alpha: false });
+      var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var W, H, dpr, parts = [], t = 0, raf = 0, running = false;
+      var BUCKETS = 24, buckets = [];
 
-  // Reveal on scroll
-  var items = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-    items.forEach(function (el) { io.observe(el); });
-  } else items.forEach(function (el) { el.classList.add('in'); });
+      // Palette along the field angle: teal -> violet -> pink -> teal, matched to the page accents.
+      var stops = [[80, 227, 194], [139, 124, 255], [255, 122, 184], [80, 227, 194]];
+      var colors = [];
+      for (var i = 0; i < BUCKETS; i++) {
+        var p = i / BUCKETS * 3, k = Math.floor(p), f = p - k, a = stops[k], b = stops[k + 1];
+        colors.push('rgba(' + Math.round(a[0] + (b[0] - a[0]) * f) + ',' + Math.round(a[1] + (b[1] - a[1]) * f) + ',' + Math.round(a[2] + (b[2] - a[2]) * f) + ',0.7)');
+        buckets.push([]);
+      }
 
-  // Card glow follows the pointer
-  document.querySelectorAll('.card').forEach(function (c) {
-    c.addEventListener('pointermove', function (e) {
-      var r = c.getBoundingClientRect();
-      c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-      c.style.setProperty('--my', (e.clientY - r.top) + 'px');
-    });
-  });
+      // Small 3D value noise (x, y, time).
+      var perm = new Uint8Array(512);
+      (function () { var v = []; for (var i = 0; i < 256; i++) v[i] = i; for (i = 255; i > 0; i--) { var j = (Math.random() * (i + 1)) | 0, s = v[i]; v[i] = v[j]; v[j] = s; } for (i = 0; i < 512; i++) perm[i] = v[i & 255]; })();
+      function fade(x) { return x * x * (3 - 2 * x); }
+      function h(x, y, z) { return perm[(perm[(perm[x & 255] + y) & 255] + z) & 255] / 255; }
+      function noise(x, y, z) {
+        var X = Math.floor(x), Y = Math.floor(y), Z = Math.floor(z), fx = fade(x - X), fy = fade(y - Y), fz = fade(z - Z);
+        var a = h(X, Y, Z) + (h(X + 1, Y, Z) - h(X, Y, Z)) * fx, b = h(X, Y + 1, Z) + (h(X + 1, Y + 1, Z) - h(X, Y + 1, Z)) * fx;
+        var c = h(X, Y, Z + 1) + (h(X + 1, Y, Z + 1) - h(X, Y, Z + 1)) * fx, d = h(X, Y + 1, Z + 1) + (h(X + 1, Y + 1, Z + 1) - h(X, Y + 1, Z + 1)) * fx;
+        var e = a + (b - a) * fy, g = c + (d - c) * fy;
+        return e + (g - e) * fz;
+      }
 
-  // Flow field background
-  var cv = document.getElementById('field');
-  var ctx = cv.getContext('2d', { alpha: false });
-  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var W, H, dpr, parts = [], t = 0, raf = 0, running = false;
-  var BUCKETS = 24, buckets = [];
+      function spawn(p) { p.x = Math.random() * W; p.y = Math.random() * H; p.life = 80 + Math.random() * 220; return p; }
 
-  // Palette along the field angle: teal -> violet -> pink -> teal, matched to the page accents.
-  var stops = [[80, 227, 194], [139, 124, 255], [255, 122, 184], [80, 227, 194]];
-  var colors = [];
-  for (var i = 0; i < BUCKETS; i++) {
-    var p = i / BUCKETS * 3, k = Math.floor(p), f = p - k, a = stops[k], b = stops[k + 1];
-    colors.push('rgba(' + Math.round(a[0] + (b[0] - a[0]) * f) + ',' + Math.round(a[1] + (b[1] - a[1]) * f) + ',' + Math.round(a[2] + (b[2] - a[2]) * f) + ',0.7)');
-    buckets.push([]);
-  }
+      function resize() {
+        dpr = Math.min(devicePixelRatio || 1, 1.25);
+        W = innerWidth; H = innerHeight;
+        cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.fillStyle = '#070b16'; ctx.fillRect(0, 0, W, H);
+        var n = Math.min(W < 700 ? 300 : 700, Math.round(W * H / 2200));
+        parts.length = 0;
+        for (var i = 0; i < n; i++) parts.push(spawn({}));
+      }
 
-  // Small 3D value noise (x, y, time).
-  var perm = new Uint8Array(512);
-  (function () { var v = []; for (var i = 0; i < 256; i++) v[i] = i; for (i = 255; i > 0; i--) { var j = (Math.random() * (i + 1)) | 0, s = v[i]; v[i] = v[j]; v[j] = s; } for (i = 0; i < 512; i++) perm[i] = v[i & 255]; })();
-  function fade(x) { return x * x * (3 - 2 * x); }
-  function h(x, y, z) { return perm[(perm[(perm[x & 255] + y) & 255] + z) & 255] / 255; }
-  function noise(x, y, z) {
-    var X = Math.floor(x), Y = Math.floor(y), Z = Math.floor(z), fx = fade(x - X), fy = fade(y - Y), fz = fade(z - Z);
-    var a = h(X, Y, Z) + (h(X + 1, Y, Z) - h(X, Y, Z)) * fx, b = h(X, Y + 1, Z) + (h(X + 1, Y + 1, Z) - h(X, Y + 1, Z)) * fx;
-    var c = h(X, Y, Z + 1) + (h(X + 1, Y, Z + 1) - h(X, Y, Z + 1)) * fx, d = h(X, Y + 1, Z + 1) + (h(X + 1, Y + 1, Z + 1) - h(X, Y + 1, Z + 1)) * fx;
-    var e = a + (b - a) * fy, g = c + (d - c) * fy;
-    return e + (g - e) * fz;
-  }
+      var SCALE = 0.0022, SPEED = 1.1;
+      function step() {
+        ctx.fillStyle = 'rgba(7,11,22,0.045)';
+        ctx.fillRect(0, 0, W, H);
+        for (var b = 0; b < BUCKETS; b++) buckets[b].length = 0;
+        t += 0.0016;
+        for (var i = 0; i < parts.length; i++) {
+          var p = parts[i];
+          var ang = noise(p.x * SCALE, p.y * SCALE, t) * Math.PI * 4;
+          var nx = p.x + Math.cos(ang) * SPEED, ny = p.y + Math.sin(ang) * SPEED;
+          var idx = (((ang / (Math.PI * 4)) * BUCKETS) | 0) % BUCKETS;
+          buckets[idx].push(p.x, p.y, nx, ny);
+          p.x = nx; p.y = ny;
+          if (--p.life < 0 || nx < 0 || nx > W || ny < 0 || ny > H) spawn(p);
+        }
+        ctx.lineWidth = 1.1;
+        for (b = 0; b < BUCKETS; b++) {
+          var s = buckets[b]; if (!s.length) continue;
+          ctx.strokeStyle = colors[b]; ctx.beginPath();
+          for (var j = 0; j < s.length; j += 4) { ctx.moveTo(s[j], s[j + 1]); ctx.lineTo(s[j + 2], s[j + 3]); }
+          ctx.stroke();
+        }
+      }
+      function loop() { step(); raf = requestAnimationFrame(loop); }
+      function start() { if (!running && !reduce) { running = true; raf = requestAnimationFrame(loop); } }
+      function stop() { running = false; cancelAnimationFrame(raf); }
 
-  function spawn(p) { p.x = Math.random() * W; p.y = Math.random() * H; p.life = 80 + Math.random() * 220; return p; }
+      // Start after the page has painted and is idle, so text and layout come first.
+      function boot() {
+        resize();
+        if (reduce) { for (var r = 0; r < 260; r++) step(); }
+        else start();
+        cv.classList.add('on');
+      }
+      var idle = window.requestIdleCallback || function (f) { return setTimeout(f, 200); };
+      if (document.readyState === 'complete') idle(boot, { timeout: 800 });
+      else addEventListener('load', function () { idle(boot, { timeout: 800 }); });
 
-  function resize() {
-    dpr = Math.min(devicePixelRatio || 1, 1.5);
-    W = innerWidth; H = innerHeight;
-    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.fillStyle = '#070b16'; ctx.fillRect(0, 0, W, H);
-    var n = Math.min(W < 700 ? 420 : 1100, Math.round(W * H / 1500));
-    parts.length = 0;
-    for (var i = 0; i < n; i++) parts.push(spawn({}));
-  }
-
-  var SCALE = 0.0022, SPEED = 1.1;
-  function step() {
-    ctx.fillStyle = 'rgba(7,11,22,0.045)';
-    ctx.fillRect(0, 0, W, H);
-    for (var b = 0; b < BUCKETS; b++) buckets[b].length = 0;
-    t += 0.0016;
-    for (var i = 0; i < parts.length; i++) {
-      var p = parts[i];
-      var ang = noise(p.x * SCALE, p.y * SCALE, t) * Math.PI * 4;
-      var nx = p.x + Math.cos(ang) * SPEED, ny = p.y + Math.sin(ang) * SPEED;
-      var idx = (((ang / (Math.PI * 4)) * BUCKETS) | 0) % BUCKETS;
-      buckets[idx].push(p.x, p.y, nx, ny);
-      p.x = nx; p.y = ny;
-      if (--p.life < 0 || nx < 0 || nx > W || ny < 0 || ny > H) spawn(p);
-    }
-    ctx.lineWidth = 1.1;
-    for (b = 0; b < BUCKETS; b++) {
-      var s = buckets[b]; if (!s.length) continue;
-      ctx.strokeStyle = colors[b]; ctx.beginPath();
-      for (var j = 0; j < s.length; j += 4) { ctx.moveTo(s[j], s[j + 1]); ctx.lineTo(s[j + 2], s[j + 3]); }
-      ctx.stroke();
-    }
-  }
-  function loop() { step(); raf = requestAnimationFrame(loop); }
-  function start() { if (!running && !reduce) { running = true; raf = requestAnimationFrame(loop); } }
-  function stop() { running = false; cancelAnimationFrame(raf); }
-
-  resize();
-  if (reduce) { for (var r = 0; r < 260; r++) step(); }
-  else start();
-
-  // Mobile URL bars change the height while scrolling; restart only on real size changes.
-  var rt;
-  addEventListener('resize', function () {
-    if (innerWidth === W && Math.abs(innerHeight - H) < 140) return;
-    clearTimeout(rt);
-    rt = setTimeout(function () { var was = running; stop(); resize(); if (reduce) { for (var r = 0; r < 260; r++) step(); } else if (was) start(); }, 180);
-  });
-  document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
-})();
-</script>
+      // Mobile URL bars change the height while scrolling; restart only on real size changes.
+      var rt;
+      addEventListener('resize', function () {
+        if (W === undefined || (innerWidth === W && Math.abs(innerHeight - H) < 140)) return;
+        clearTimeout(rt);
+        rt = setTimeout(function () { var was = running; stop(); resize(); if (reduce) { for (var r = 0; r < 260; r++) step(); } else if (was) start(); }, 180);
+      });
+      document.addEventListener('visibilitychange', function () { if (W === undefined) return; document.hidden ? stop() : start(); });
+    })();
+  </script>
 </body>
+
 </html>
